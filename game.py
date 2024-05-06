@@ -112,14 +112,14 @@ except FileNotFoundError:
     high_score = 0
 
 # Load suara pada tampilan awal
-suara_tampilan_awal = pygame.mixer.Sound('sounds/soundawal.wav')
+suara_tampilan_awal = pygame.mixer.Sound('Nitro Itera Racing/Tubes/sounds/soundawal.wav')
 suara_tampilan_awal.set_volume(0.5)  # Set volume suara tampilan awal
 
-# Tambahkan variabel untuk menyimpan status suara tampilan awal
+# Tambahkan variabel untuk menyimpan statuss suara tampilan awal
 suara_tampilan_awal_berjalan = True
 
 # Load suara crash
-suara_crash = pygame.mixer.Sound('sounds/crash.wav')
+suara_crash = pygame.mixer.Sound('Nitro Itera Racing/Tubes/sounds/crash.wav')
 suara_crash.set_volume(0.5) #Volume suara crash
 
 # Tambahkan variabel untuk menyimpan status suara mobil
@@ -145,9 +145,9 @@ class Kendaraan_rintangan(pygame.sprite.Sprite):
 # Kelas Mobil Pemain dan rintangan / Pewarisan
 class MobilPemain(Kendaraan_rintangan):
     def __init__(self, x, y):
-        gambar = pygame.image.load('images/mobil utama/main car.png')
+        gambar = pygame.image.load('Nitro Itera Racing/Tubes/images/mobil utama/main car.png')
         super().__init__(gambar, x, y)
-        self._sound_engine = pygame.mixer.Sound('sounds/suara mobil.wav')
+        self._sound_engine = pygame.mixer.Sound('Nitro Itera Racing/Tubes/sounds/suara mobil.wav')
         self._sound_engine.set_volume(0.5) #Volume suara mobil
         # Setel status suara mobil ke True saat mobil dimulai
         global suara_mobil_berjalan
@@ -165,15 +165,15 @@ grup_pemain.add(mobil_pemain)
 nama_file_gambar = ['car1.png', 'police.png', 'car2.png', 'super_car.png', 'car3.png', 'bus.png', 'car4.png', 'batu.png', 'truck1.png', 'pickup_truck.png', 'truck2.png', 'semi_trailer.png', 'truck3.png', 'taxi.png', 'truck4.png', 'van.png', 'cone.png']
 gambar_kendaraan = []
 for nama_file in nama_file_gambar:
-    gambar = pygame.image.load('images/KendaraanDanRintangan/'+ nama_file)
+    gambar = pygame.image.load('Nitro Itera Racing/Tubes/images/KendaraanDanRintangan/'+ nama_file)
     gambar_kendaraan.append(gambar)
 
 # Objek gambar tabrakan
-tabrakan = pygame.image.load('images/crash/crash.png')
+tabrakan = pygame.image.load('Nitro Itera Racing/Tubes/images/crash/crash.png')
 rect_tabrakan = tabrakan.get_rect()
 
 # Objek gambar pohon
-pohon = pygame.image.load('images/Objek/tree1.png')
+pohon = pygame.image.load('Nitro Itera Racing/Tubes/images/Objek/tree1.png')
 lebar_pohon = pohon.get_rect().width
 tinggi_pohon = pohon.get_rect().height
 
@@ -199,14 +199,14 @@ for i in range(num_trees):
     trees_right.append([x_kanan, y_kanan, speed_kanan])
 
 # Load gambar pause
-gambar_pause = pygame.image.load('images/button/pause.png')
+gambar_pause = pygame.image.load('Nitro Itera Racing/Tubes/images/button/pause.png')
 lebar_gambar_pause = 50
 tinggi_gambar_pause = 690
 posisi_gambar_pause = (lebar - lebar_gambar_pause - 40, tinggi - tinggi_gambar_pause - 10)
 
 # Load gambar tombol mute
-gambar_mute_on = pygame.image.load('images/button/suara on.png')
-gambar_mute_off = pygame.image.load('images/button/suara off.png')
+gambar_mute_on = pygame.image.load('Nitro Itera Racing/Tubes/images/button/suara on.png')
+gambar_mute_off = pygame.image.load('Nitro Itera Racing/Tubes/images/button/suara off.png')
 lebar_gambar_mute = 30
 tinggi_gambar_mute = 690
 posisi_gambar_mute = (lebar - lebar_gambar_mute - 15, tinggi - tinggi_gambar_mute - 10)
@@ -245,19 +245,19 @@ while layar_awal:
                 pygame.quit()
 
     # Load gambar latar belakang
-    gambar_latar_belakang = pygame.image.load('images/Awal game/baground awal.png')
+    gambar_latar_belakang = pygame.image.load('Nitro Itera Racing/Tubes/images/Awal game/baground awal.png')
 
     # Gambar latar belakang
     layar.blit(gambar_latar_belakang, (0, 0))  # Ubah (0, 0) sesuai dengan posisi yang Anda inginkan
 
     # Load play button image
-    play_button_image = pygame.image.load('images/Awal game/play1.png')
+    play_button_image = pygame.image.load('Nitro Itera Racing/Tubes/images/Awal game/play1.png')
     play_button_rect = play_button_image.get_rect()
     play_button_rect.center = (lebar // 2, tinggi // 2 - 10)
     layar.blit(play_button_image, play_button_rect)
 
     # Load exit button image
-    exit_button_image = pygame.image.load('images/Awal game/exit1.png')
+    exit_button_image = pygame.image.load('Nitro Itera Racing/Tubes/images/Awal game/exit1.png')
     exit_button_rect = exit_button_image.get_rect()
     exit_button_rect.center = (lebar // 2, tinggi // 2 + 100)
     layar.blit(exit_button_image, exit_button_rect)
@@ -435,7 +435,7 @@ while berjalan:
     grup_kendaraan.draw(layar)
     
     # Objek tampilan skor
-    font_path = "font/pixel.ttf" 
+    font_path = "Nitro Itera Racing/Tubes/font/pixel.ttf" 
     font = pygame.font.Font(font_path, 15)
     teks_skor = font.render('Skor : ' + str(skor), True, hitam)
     rect_teks_skor = teks_skor.get_rect()
